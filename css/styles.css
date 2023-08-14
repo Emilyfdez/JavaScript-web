@@ -1,0 +1,321 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #f5f2f2;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 20px;
+}
+
+h4 {
+  font-size: 18px;
+  font-weight: 200;
+  font-style: italic;
+}
+
+body {
+  background-image: linear-gradient(to right bottom, #7f7ba8, #736dae, #675fb3, #5b51b7, #4d42bb);
+  overflow: hidden;
+}
+input,
+select,
+textarea {
+  background-color: #303036;
+  color: #FFFAFF;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  min-width: 200px;
+  border-radius: 5px;
+  font-size: 14px;
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  min-width: 80px;
+  text-align: left;
+  display: inline-block;
+}
+
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+
+* html .clearfix {
+  height: 1%;
+}
+
+.clearfix {
+  display: block;
+}
+
+
+#cabezal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #303036;
+  border-bottom: 2px solid #48B9A9;
+}
+
+
+#btnLogo {
+  background: none;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+}
+
+#btnLogo img {
+  width: 200px;
+  height: auto;
+  transition: 0.4s;
+  opacity: 0.75;
+}
+
+#btnLogo img:hover {
+  opacity: 1;
+}
+
+
+#contenedor {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 176px);
+  width: 100%;
+  margin: 0 auto;
+}
+
+#contenido {
+  width: 80%;
+  padding: 50px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+#seccionPrincipal {
+  text-align: center;
+}
+
+#seccionCensista {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#seccionRegistro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#seccionOpcionesCensista {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#seccionComprobarCensados {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#seccionIngresarCenso {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+#btnIniciarSesionCensista {
+  margin-left: 120px;
+}
+
+#seccionInvitado {
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#btnInicioInvitado {
+  margin-left: 90px;
+}
+
+.btnvolver {
+  display: block;
+  margin: 80px auto;
+  font-size: 20px;
+  padding: 5px 10px;
+  width: 150px;
+  box-sizing: border-box;
+  transition: 0.7;
+}
+
+.error {
+  color: rgb(0, 0, 0);
+  font-size: 13px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.btnvolver:hover{
+  font-size: 21px;
+}
+
+.btnvolverfinal{
+  display: block;
+  margin: 80px auto;
+  font-size: 20px;
+  padding: 10px 15px;
+  width: 180px;
+  box-sizing: border-box;
+  transition: 0.7;
+}
+
+.btnvolverfinal:hover{
+  font-size: 21px;
+}
+
+#btnVolverOpciones {
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 18px; 
+  padding: 5px 10px; 
+  width: auto; 
+  min-width: 80px; 
+  box-sizing: border-box; 
+}
+
+#seccionIngresarInvitado{
+  margin-top: 60px;
+}
+
+#btnEnviarDatosInvitado {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+  width: auto; 
+}
+
+#txtBienvenido {
+  font-size: 70px;
+  text-align: center;
+  color: #f5f2f2;
+  text-shadow: 6px 6px 4px rgba(36, 6, 55, 0.5);
+}
+
+.txtCedula {
+  width: 100%;
+  min-width: 200px;
+  margin-bottom: 10px;
+}
+
+.btn {
+  height: 60px;
+  width: 400px;
+}
+
+
+button,
+input[type="button"] {
+  background-color: #48B9A9;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 25px;
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.7s;
+  margin: 10px 0;
+}
+
+
+button:hover,
+input[type="button"]:hover {
+  background-color: #2F897F;
+  font-weight: 600;
+  font-size: 27px;
+}
+
+
+button:disabled,
+input[type="button"]:disabled {
+  background-color: #9696a1;
+  cursor: not-allowed;
+}
+
+#btnInicioInvitado {
+  width: 45px;
+  height: 45px;
+  font-size: 18px;
+  font-weight: normal;
+  transition: 0.5s;
+}
+
+#btnInicioInvitado:hover {
+  font-size: 19px;
+  font-weight: bold;
+  width: 50px;
+  height: 50px;
+}
+
+
+#pie {
+  background-color: #303036;
+  padding: 20px;
+  color: #fff;
+  font-size: 12px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  position: static;
+  border-top: 1px solid #48B9A9;
+}

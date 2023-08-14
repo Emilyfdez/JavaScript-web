@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Censo 2023</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+
+<body>
+    <div id="cabezal" class="clearfix">
+        <button id="btnLogo">
+            <img src="imgs/700x410_28.png" alt="logo" onclick="cambiarSeccion('seccionPrincipal')">
+        </button>
+    </div>
+
+    <div id="contenedor">
+        <div id="contenido">
+            <!-- Sección Principal -->
+            <div id="seccionPrincipal" class="seccion">
+                <h1 id="txtBienvenido">Bienvenido</h1>
+                <h4 id="pPrincipal">Selecciona el perfil con el que ingresar:</h4>
+                <div id="opciones">
+                    <input type="button" id="btnSeccionCensista" value="Censista" class="btn">
+                    <input type="button" id="btnSeccionInvitado" value="Invitado" class="btn">
+                </div>
+            </div>
+
+            <!-- Sección Censista -->
+            <div id="seccionCensista" class="seccion">
+                <input type="button" id="btnSeccionRegistro" value="Registro" class="btn">
+                <input type="button" id="btnSeccionIngresar" value="Iniciar sesión" class="btn">
+                <button id="btnVolverSeccionCensista" onclick="cambiarSeccion('seccionPrincipal')"
+                    class="btnvolver">Volver</button>
+            </div>
+
+            <!-- Sección Invitado -->
+            <div id="seccionInvitado" class="seccion">
+                <h5>Ingrese su número de cédula:</h5>
+                <p id="pMensajeErrorCedula" class="error"></p>
+                <input type="number" id="nbrCedulaIngreso" class="nbrCedula">
+                <input type="button" id="btnSeccionIngresarInvitado" value="Iniciar sesión" class="btn">
+                <button id="btnVolverSeccionInvitado" onclick="cambiarSeccion('seccionPrincipal')"
+                    class="btnvolver">Volver</button>
+            </div>
+
+            <!-- Sección Registro Censista -->
+            <div id="seccionRegistro" class="seccion">
+                <h1>REGISTRO</h1>
+                <p id="pErrorCamposObligatorios" class="error"></p>
+                <label for="txtNombreCensista">Nombre completo:</label>
+                <input type="text" id="txtNombreCensista" class="size">
+                <label for="txtNombreUsuarioCensista">Nombre de usuario:</label>
+                <input type="text" id="txtNombreUsuarioCensista" class="size">
+                <p id="pMensajeErrorUsuario" class="error"></p>
+                <label for="pswContraseñaCensista">Ingrese contraseña:</label>
+                <input type="password" id="pswContraseñaCensista" class="size">
+                <p id="pMensajeErrorContra" class="error"></p>
+                <input type="button" id="btnSeccionOpcionesCensista" value="Ingresar">
+                <button id="btnVolverSeccionRegistro" onclick="cambiarSeccion('seccionCensista')"
+                    class="btnvolver">Volver</button>
+            </div>
+
+            <!-- Sección Datos Invitado -->
+            <div id="seccionIngresarInvitado" class="seccion">
+                <h1>Precompletar censo:</h1>
+                <label for="txtNombreApellidoInvitado">Ingrese nombre y apellido:</label>
+                <input type="text" id="txtNombreApellidoInvitado"><br>
+                <label for="nbrEdadInvitado">Ingrese edad:</label>
+                <input type="number" id="nbrEdadInvitado"><br>
+                <label for="slcDepartamentoInvitado">Seleccione Departamento de residencia: </label>
+                <select id="slcDepartamentoInvitado"></select><br>
+                <label for="slcOcupaciónInvitado">Seleccione Ocupación: </label>
+                <select id="slcOcupaciónInvitado">
+                    <option value="">Seleccione..</option>
+                    <option value="Dependiente">Dependiente</option>
+                    <option value="Independiente">Independiente</option>
+                    <option value="Estudiante">Estudiante</option>
+                    <option value="No trabaja">No trabaja</option>
+                </select>
+                <input type="button" id="btnSeccionEnviarDatosInvitado" value="Enviar">
+                <button id="btnVolverSeccionInvitado" onclick="cambiarSeccion('seccionInvitado')"
+                    class="btnvolver">Volver</button>
+                <br>
+            </div>
+
+            <!-- Sección Datos Enviados Invitado -->
+            <div id="seccionEnviarDatosInvitado" class="seccion">
+                <h1>Datos enviados con éxito</h1>
+                <h2>Vuelva a ingresar para modificar los datos</h2>
+                <h3>¡Gracias por precompletar el censo 2023!</h3>
+                <button id="btnVolverSeccionEnviarDatosInvitado" onclick="cambiarSeccion('seccionPrincipal')"
+                    class="btnvolverfinal">Volver a inicio</button>
+                <br>
+            </div>
+
+            <!-- Sección Opciones Censista -->
+            <div id="seccionOpcionesCensista" class="seccion">
+                <input type="button" id="btnSeccionIngresarCenso" value="Ingresar Censo Nuevo"
+                    class="btn IngresarCenso">
+                <input type="button" id="btnSeccionComprobarCensados" value="Comprobar Censados" class="btn">
+                <button id="btnVolverSeccionOpcionesCensista" onclick="cambiarSeccion('seccionCensista')"
+                    class="btnvolver">Volver</button>
+            </div>
+
+            <!-- Sección Comprobar Censados -->
+            <div id="seccionComprobarCensados" class="seccion">
+                <h5>Ingrese su número de cédula sin puntos ni guión:</h5>
+                <input type="text" id="txtCedulaComprobar">
+                <input type="button" value="Enviar" id="btnComprobarCensados">
+                <button id="btnVolverSeccionComprobarCensados" onclick="cambiarSeccionAnterior()"
+                    class="btnvolver">Volver</button>
+            </div>
+
+            <!-- Sección Ingresar Datos -->
+            <div id="seccionIngresarCenso" class="seccion">
+                <label for="txtNombreApellidoCensado">Ingrese nombre y apellido:</label>
+                <input type="text" id="txtNombreApellidoCensado"><br>
+                <label for="nbrEdad">Ingrese edad:</label>
+                <input type="number" id="nbrEdad"><br>
+                <label for="nbrCedula">Ingrese Cedula:</label>
+                <input type="number" id="nbrCedula"><br>
+                <label for="slcDepartamento">Seleccione Departamento de residencia: </label>
+                <select id="slcDepartamento"></select><br>
+                <label for="slcOcupación">Seleccione Ocupación: </label>
+                <select id="slcOcupación">
+                    <option value="">Seleccione..</option>
+                    <option value="Dependiente">Dependiente</option>
+                    <option value="Independiente">Independiente</option>
+                    <option value="Estudiante">Estudiante</option>
+                    <option value="No trabaja">No trabaja</option>
+                </select>
+                <button id="btnVolverSeccionIngresarCenso" onclick="cambiarSeccion('seccionCensista')"
+                    class="btnvolver">Volver</button>
+                <br>
+            </div>
+
+            <!-- Sección Iniciar Sesión -->
+            <div id="seccionIngresar" class="seccion">
+                <h1>Ingreso de censista</h1>
+                <label for="txtUsuarioCensista">Usuario:</label>
+                <input type="text" id="txtUsuarioCensista">
+                <p id="pMensajeErrorInicioUsuario" class="error"></p>
+                <label for="txtContraseñaCensista">Ingrese contraseña:</label>
+                <p id="pMensajeErrorInicioContra" class="error"></p>
+                <input type="password" id="txtContraseñaCensista">
+                <p id="pErrorIngresar" class="error"></p>
+                <input type="button" id="btnSeccionOpcionesCensista" class="btn btnInicioSesion" value="Iniciar sesión"
+                    class="btn">
+                <button id="btnVolverseccionIngresar" onclick="cambiarSeccion('seccionCensista')"
+                    class="btnvolver">Volver</button>
+            </div>
+        </div><!-- FIN CONTENIDO -->
+    </div><!-- FIN CONTENEDOR -->
+
+    <footer id="pie">
+        <a href="https://www.ort.edu.uy">Footer</a>
+    </footer><!-- FIN PIE -->
+
+    <script src="js/codigo.js"></script>
+</body>
+
+</html>
